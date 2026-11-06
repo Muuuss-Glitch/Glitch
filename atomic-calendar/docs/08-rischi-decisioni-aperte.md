@@ -1,5 +1,7 @@
 # 08 — Rischi e decisioni aperte
 
+> 🟡 **Da riassorbire** (06/11/2026): da S1 le decisioni prese vanno nel [registro delle decisioni](decisioni.md) e le domande di dominio in fondo al [dizionario dei dati](00b-dizionario-dati.md). Le voci tecniche qui sotto si riprendono al turno del documento a cui si riferiscono (vedi [roadmap](07-roadmap-milestone.md)).
+
 Elenco delle decisioni non ancora prese e dei rischi identificati durante la stesura dei documenti di design. Nessuna di queste blocca l'inizio del lavoro sulle singole milestone (vedi [07-roadmap-milestone.md](07-roadmap-milestone.md)): vanno validate **durante** l'esecuzione della milestone a cui si riferiscono, con la proposta più sensata già segnata come default nei documenti corrispondenti.
 
 | # | Decisione/rischio | Dove impatta | Proposta di default (da validare) |

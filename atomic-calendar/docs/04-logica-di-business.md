@@ -1,5 +1,7 @@
 # 04 — Logica di business
 
+> ⏸ **Bozza parcheggiata fino a S6** (06/11/2026): scritta prima dell'[analisi del dominio](00a-analisi-dominio.md). Da allineare a: blocco completato con soglia "x su y" ([D-008](decisioni.md)), rinvii secondo la regola 9 (domanda Q3 del [dizionario](00b-dizionario-dati.md)), calcolo degli osservabili A, B, C ([D-009](decisioni.md)).
+
 ## Motore RRULE
 
 Le regole di ricorrenza (vedi [02-modello-concettuale.md](02-modello-concettuale.md) e [03-schema-database.md](03-schema-database.md)) **non vengono mai materializzate in righe separate**. Il motore applicativo espone una funzione concettuale:

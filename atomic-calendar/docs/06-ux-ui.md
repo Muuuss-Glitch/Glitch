@@ -1,5 +1,7 @@
 # 06 — UX/UI
 
+> ⏸ **Bozza parcheggiata fino a S7** (06/11/2026): scritta prima dell'[analisi del dominio](00a-analisi-dominio.md). In S7 si riprende solo per le storie della prima fetta, aggiungendo le viste per abitudini e contatori (la "lavagnetta" e il "sughero").
+
 ## User flow principali
 
 ```mermaid

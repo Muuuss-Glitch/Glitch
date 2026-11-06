@@ -1,5 +1,7 @@
 # 05 — Sync calendari esterni (Google / Apple)
 
+> ⏸ **Bozza parcheggiata** (06/11/2026): la sincronizzazione dettagliata è fuori dal confine della v1 ([D-007](decisioni.md)) e si riprende dopo la prima fetta verticale. Il materiale resta valido come base.
+
 ## Google Calendar
 
 - **Autenticazione**: OAuth2, scope minimo necessario (`calendar.events` in lettura/scrittura, non l'intero account Google se evitabile).

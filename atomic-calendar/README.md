@@ -2,20 +2,29 @@
 
 Modulo "calendario smart" della piattaforma Glitch — il **fulcro centrale** del Progetto Atomic: trasformare obiettivi in un percorso costante tramite timeblocking + to-do list dinamica, su cui in futuro si aggancerà lo strato di gamification/edutainment (evoluzione di `Glitch mark1`).
 
-Questa cartella contiene **solo documentazione di design**, prodotta seguendo un percorso in stile universitario: prima i modelli, poi lo schema del database, poi la logica di business, poi la sincronizzazione esterna, infine UX/UI. Nessun codice applicativo è ancora presente.
+Questa cartella contiene **solo documentazione di design**, prodotta con un metodo in stile universitario: dominio → dizionario dei dati → requisiti → modello concettuale → modello logico → logica → UX/UI → codice. Nessun codice applicativo è ancora presente.
+
+**Per riprendere il lavoro, parti da [STATO.md](STATO.md)**: dice dove siamo e cosa fare nella prossima sessione.
 
 ## Indice
 
-Leggere in quest'ordine:
+Documenti attivi:
 
-1. [01 — Requisiti](docs/01-requisiti.md)
-2. [02 — Modello concettuale (ER)](docs/02-modello-concettuale.md)
-3. [03 — Schema database](docs/03-schema-database.md)
-4. [04 — Logica di business](docs/04-logica-di-business.md)
-5. [05 — Sync calendari esterni (Google / Apple)](docs/05-sync-calendari-esterni.md)
-6. [06 — UX/UI](docs/06-ux-ui.md)
-7. [07 — Roadmap e milestone](docs/07-roadmap-milestone.md)
-8. [08 — Rischi e decisioni aperte](docs/08-rischi-decisioni-aperte.md)
+- [STATO.md](STATO.md) — stato del progetto e prossima sessione
+- [00a — Analisi del dominio](docs/00a-analisi-dominio.md)
+- [00b — Dizionario dei dati](docs/00b-dizionario-dati.md)
+- [Registro delle decisioni](docs/decisioni.md)
+- [07 — Roadmap per sessioni](docs/07-roadmap-milestone.md)
+
+Bozze scritte prima dell'analisi del dominio, da riprendere al loro turno (vedi roadmap):
+
+- [01 — Requisiti](docs/01-requisiti.md)
+- [02 — Modello concettuale (ER)](docs/02-modello-concettuale.md)
+- [03 — Schema database](docs/03-schema-database.md)
+- [04 — Logica di business](docs/04-logica-di-business.md)
+- [05 — Sync calendari esterni (Google / Apple)](docs/05-sync-calendari-esterni.md)
+- [06 — UX/UI](docs/06-ux-ui.md)
+- [08 — Rischi e decisioni aperte](docs/08-rischi-decisioni-aperte.md)
 
 ## Stack target (deciso)
 

@@ -1,5 +1,7 @@
 # 01 — Requisiti
 
+> 🟡 **Da rivedere in S3** (06/11/2026): scritto prima dell'[analisi del dominio](00a-analisi-dominio.md). I due vincoli tecnici restano validi; il resto va riscritto con i termini del [glossario](00a-analisi-dominio.md#glossario) (es. "Attività" al posto di "Task", "Blocco" al posto di "Time Block").
+
 ## Visione
 
 > Dobbiamo realizzare un'app che consenta di trasformare obiettivi in un percorso costante, senza far perdere la concentrazione per via della mancanza di retention.

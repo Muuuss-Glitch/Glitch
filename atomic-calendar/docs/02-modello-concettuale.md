@@ -1,5 +1,7 @@
 # 02 — Modello concettuale (ER)
 
+> ⏸ **Bozza parcheggiata fino a S4** (06/11/2026): scritta prima dell'[analisi del dominio](00a-analisi-dominio.md). Va rifatta a partire dal [dizionario dei dati](00b-dizionario-dati.md): un blocco contiene più attività ([D-008](decisioni.md)), "Category" diventa "Area", l'obiettivo si specializza in Progetto, Abitudine e Contatore, e si aggiungono Routine, Registrazione, Rinvio, Regola, Ricompensa, Sfida e Fase.
+
 ## Diagramma entità-relazione
 
 ```mermaid

@@ -1,5 +1,7 @@
 # 03 — Schema database
 
+> ⏸ **Bozza parcheggiata fino a S5** (06/11/2026): scritta prima dell'[analisi del dominio](00a-analisi-dominio.md). Lo schema va rifatto dopo il nuovo modello concettuale (S4); restano validi i principi sul tempo (UTC + fuso IANA) e sul salvataggio offline.
+
 ## Motore proposto
 
 **PostgreSQL** (da confermare, vedi [08-rischi-decisioni-aperte.md](08-rischi-decisioni-aperte.md)) per il backend. Motivazioni: tipo nativo `TIMESTAMPTZ`, supporto `jsonb`, ecosistema maturo per backend proprietari, buon supporto per indici su intervalli temporali.

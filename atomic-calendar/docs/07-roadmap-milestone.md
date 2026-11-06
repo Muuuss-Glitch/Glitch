@@ -1,34 +1,60 @@
-# 07 — Roadmap e milestone
+# 07 — Roadmap per sessioni
 
-Fasi di progettazione, ciascuna con **criterio di uscita esplicito** (non stime a giorni/settimane: si chiude una milestone quando il criterio è soddisfatto, non a scadenza).
+Ogni sessione ha **un obiettivo** e un **criterio di uscita** verificabile. Una sessione si chiude quando il criterio è soddisfatto; se non ci si riesce, la sessione era troppo grande e va spezzata in due. L'ordine segue la decisione [D-005](decisioni.md): dominio → dizionario → requisiti → modelli → logica → UX/UI → codice.
 
-## M0 — Requisiti
-**Documento**: [01-requisiti.md](01-requisiti.md)
-**Criterio di uscita**: i requisiti funzionali/non funzionali sono approvati dall'utente e i due vincoli tecnici non negoziabili (UTC+IANA tz sempre; RRULE mai esplose) sono confermati senza ambiguità.
+Lo stato aggiornato (quale sessione è la prossima) è sempre in [STATO.md](../STATO.md).
 
-## M1 — Modello concettuale
-**Documento**: [02-modello-concettuale.md](02-modello-concettuale.md)
-**Criterio di uscita**: il diagramma ER è validato con l'utente e la decisione aperta "dove agganciare `RecurrenceRule` (Task o TimeBlock)" è presa e registrata in [08-rischi-decisioni-aperte.md](08-rischi-decisioni-aperte.md).
+## Fase A — Capire il problema
 
-## M2 — Schema database
-**Documento**: [03-schema-database.md](03-schema-database.md)
-**Criterio di uscita**: il DDL è rivisto e approvato, il motore DB (Postgres o alternativa) è confermato, e lo schema locale offline-first (Drift o alternativa) è abbozzato a livello di principi.
+### S1 — Analisi del dominio ✅ (06/11/2026)
+**Prodotto**: [00a-analisi-dominio.md](00a-analisi-dominio.md), prima versione di [00b-dizionario-dati.md](00b-dizionario-dati.md), [decisioni.md](decisioni.md), [STATO.md](../STATO.md).
+**Criterio di uscita**: le 6 domande (perché, chi, cosa, come, quando, dove) hanno una risposta approvata; esiste un glossario; le prime entità sono estratte.
 
-## M3 — Logica di business
-**Documento**: [04-logica-di-business.md](04-logica-di-business.md)
-**Criterio di uscita**: la state machine di Task/Time Block e l'algoritmo di split sono validati con almeno un walkthrough concreto (esempio numerico end-to-end), e il contratto degli eventi verso la gamification è definito e ritenuto sufficiente per il futuro consumer.
+### S2 — Dizionario dei dati completo
+**Prodotto**: 00b in versione definitiva.
+**Criterio di uscita**: domande Q1–Q8 chiuse e registrate; ogni entità ha attributi con significato, obbligatorietà e valori ammessi; le regole v0 sono scritte come "quando / se / allora".
 
-## M4 — Sync calendari esterni
-**Documento**: [05-sync-calendari-esterni.md](05-sync-calendari-esterni.md)
-**Criterio di uscita**: la scelta EventKit vs CalDAV per Apple è presa, gli scope OAuth per Google/Apple sono definiti, e la policy di conflitto a due vie è approvata.
+### S3 — Requisiti e casi d'uso
+**Prodotto**: 01-requisiti.md riscritto a partire dal dominio, con le storie utente ("come giocatore voglio… per…").
+**Criterio di uscita**: ogni storia usa solo termini del glossario; ogni entità del dizionario compare in almeno una storia; è scelta la **prima fetta verticale** (le 3–5 storie minime da implementare per prime).
 
-## M5 — UX/UI
-**Documento**: [06-ux-ui.md](06-ux-ui.md)
-**Criterio di uscita**: i flow principali e i wireframe (testuali/Mermaid) delle due viste sono approvati e verificati come coerenti con il modello dati definito in M1-M2 (nessuna interazione UX richiede un dato che lo schema non prevede).
+## Fase B — Modellare
 
-## M6 — MVP implementativo (fuori scope di questa fase)
-Da aprire **solo su richiesta esplicita** dell'utente, come piano di implementazione separato, una volta chiuse M0–M5. Non fa parte del lavoro di questa sessione di design.
+### S4 — Modello concettuale
+**Prodotto**: 02-modello-concettuale.md rifatto (diagramma ER).
+**Criterio di uscita**: tutte le entità del dizionario sono nel diagramma con cardinalità motivate; è chiusa la scelta su dove vive la ricorrenza (proposta: sulla Routine).
 
-## Stato attuale
+### S5 — Modello logico (database)
+**Prodotto**: 03-schema-database.md rifatto.
+**Criterio di uscita**: ogni entità ha la sua tabella; ogni vincolo del dizionario è un vincolo dello schema oppure è assegnato esplicitamente alla logica; un esempio reale della settimana (blocchi, attività, registrazioni, rinvii) entra nello schema senza forzature.
 
-Tutti i documenti M0–M5 sono stati scritti in prima bozza in questa sessione. Restano da fare le **validazioni esplicite** con l'utente (in particolare la decisione su `RecurrenceRule` in M1, il motore DB in M2, e le scelte di sync in M4) prima di considerare ciascuna milestone formalmente chiusa — vedi [08-rischi-decisioni-aperte.md](08-rischi-decisioni-aperte.md) per l'elenco completo.
+### S6 — Logica di dominio
+**Prodotto**: 04-logica-di-business.md rifatto (stati, regole, calcolo degli osservabili).
+**Criterio di uscita**: diagrammi degli stati per attività e blocco; le regole v0 eseguite a mano su una giornata vera danno l'esito atteso; A, B e C sono calcolabili dai dati dello schema.
+
+## Fase C — Progettare l'uso
+
+### S7 — UX/UI della prima fetta
+**Prodotto**: 06-ux-ui.md rifatto, solo per le storie della prima fetta.
+**Criterio di uscita**: ogni schermata usa solo dati presenti nello schema; il percorso "pianifico un blocco → lo eseguo → lo registro" si percorre su carta senza buchi.
+
+## Fase D — Costruire
+
+### S8 — Preparazione del progetto
+**Prodotto**: progetto Flutter vuoto, struttura delle cartelle, prima verifica automatica.
+**Criterio di uscita**: l'app si avvia e la verifica automatica passa.
+
+### S9 e seguenti — Prima fetta verticale, poi si allarga
+Una sessione per storia della prima fetta, ognuna con dati salvati, interfaccia minima e test. Solo dopo si aggiungono sincronizzazione con calendari esterni (05), motore di gioco e il resto.
+
+## Corrispondenza con la roadmap di settembre
+
+| Prima (M0–M6) | Ora |
+|---|---|
+| M0 Requisiti | S1–S3 (dominio, dizionario, requisiti) |
+| M1 Modello concettuale | S4 |
+| M2 Schema database | S5 |
+| M3 Logica di business | S6 |
+| M4 Sync calendari esterni | dopo la prima fetta (fuori dal confine v1, D-007) |
+| M5 UX/UI | S7 |
+| M6 MVP | S8 e seguenti |
